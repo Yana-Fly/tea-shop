@@ -1,0 +1,7 @@
+<section id="order" class="container my-5">
+  <div class="row flex-column align-items-center">
+    <h2 class="fw-bold text-center" *ngIf="!orderSuccess">Сделать заказ</h2>
+    <order-form class="col-lg-9 col-xl-6 mt-4" *ngIf="!orderSuccess" (orderSuccess)="onOrderSuccess()"></order-form>
+    <h3 class="thanks mt-4 text-center text-primary" *ngIf="orderSuccess">Спасибо за заказ!</h3>
+  </div>
+</section>

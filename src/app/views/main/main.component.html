@@ -1,0 +1,71 @@
+<section id="advantage" class="container my-3 my-lg-5">
+  <div class="slider">
+    <div class="d-flex align-items-center">
+      <img src="assets/images/banner1.png" class="slider__img w-100 h-100" alt="Баннер">
+      <div class="position-absolute ms-5 my-5">
+        <div class="col-9 col-md-12 fw-bold h1 ms-4 ms-md-5">Скидки на травянные чаи</div>
+        <p class="col-8 col-sm-12 my-3 my-sm-5 ms-4 ms-md-5">Узнай все подробности, заполнив заявку</p>
+        <a [routerLink]="'catalog'" class="btn btn-primary ms-4 ms-md-5 px-5">Выбрать чай</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5">
+  <h2 class="text-center fw-bold">Ответы на часто задаваемые вопросы</h2>
+  <div class="row">
+    <div id="accordion" class="col-11 col-lg-9 col-xl-7 m-auto mt-5">
+      <h3 class="position-relative border-0 ui-state-active rounded fw-bold p-4">
+        <span class="d-flex col-10 col-sm-auto">Собираете ли вы подарочные боксы?</span>
+      </h3>
+      <div class="border-0">
+        Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+      </div>
+      <h3 class="position-relative mt-3 p-4 border-0 rounded fw-bold">
+        <span class="d-flex col-10 col-sm-auto">Сколько у вас разновидностей чая?</span>
+      </h3>
+      <div class="border-0">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta molestias ratione rem sapiente
+        similique?
+      </div>
+      <h3 class="position-relative mt-3 p-4 border-0 rounded fw-bold">
+        <span class="d-flex col-10 col-sm-auto">В какой срок осуществляется доставка?</span>
+      </h3>
+      <div class="border-0">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta molestias ratione rem sapiente
+        similique? Aliquid asperiores at commodi delectus in nam, nisi nulla quam rerum saepe, sequi suscipit
+        veritatis, voluptate.
+      </div>
+      <h3 class="position-relative mt-3 p-4 border-0 rounded fw-bold">
+        <span class="d-flex col-10 col-sm-auto">У вас обновляется ассортимент?</span>
+      </h3>
+      <div class="border-0">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta molestias ratione rem sapiente
+        similique?
+      </div>
+      <h3 class="position-relative mt-3 p-4 border-0 rounded fw-bold">
+        <span class="d-flex col-10 col-sm-auto">Какого объема у вас пачки чая?</span>
+      </h3>
+      <div class="border-0">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta molestias ratione rem sapiente
+        similique? Aliquid asperiores at commodi delectus in nam, nisi nulla quam rerum saepe, sequi suscipit
+        veritatis, voluptate.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<ng-template #popup let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel"></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    Посмотрите наши чайные коллекции
+  </div>
+  <div class="modal-footer">
+    <a [routerLink]="'catalog'" type="button" class="btn btn-primary">Смотреть</a>
+  </div>
+</ng-template>

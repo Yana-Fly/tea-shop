@@ -1,0 +1,92 @@
+<form class="row needs-validation g-3" novalidate [formGroup]="orderForm">
+  <div class="col-12 position-relative">
+    <label for="product" class="form-label">Товар</label>
+    <input type="text" id="product" class="form-control" formControlName="product">
+    <div class="invalid-feedback" *ngIf="orderForm.get('product')?.invalid
+          && (orderForm.get('firstName')?.touched || orderForm.get('firstName')?.dirty)">
+      Обязательно для заполнения!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="name" class="form-label">Имя</label>
+    <input type="text" id="name" class="form-control" formControlName="firstName">
+    <div class="w-100" *ngIf="orderForm.get('firstName')?.invalid
+              && (orderForm.get('firstName')?.touched || orderForm.get('firstName')?.dirty)">
+      <div class="invalid-feedback" *ngIf="orderForm.get('firstName')?.errors?.['required']">
+        Обязательно для заполнения!
+      </div>
+      <div class="invalid-feedback" *ngIf="orderForm.get('firstName')?.errors?.['pattern']">
+        Поле может содержать только буквы!
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="lastname" class="form-label">Фамилия</label>
+    <input type="text" id="lastname" class="form-control" formControlName="lastName">
+    <div class="w-100" *ngIf="orderForm.get('lastName')?.invalid
+              && (orderForm.get('lastName')?.touched || orderForm.get('lastName')?.dirty)">
+      <div class="invalid-feedback" *ngIf="orderForm.get('lastName')?.errors?.['required']">
+        Обязательно для заполнения!
+      </div>
+      <div class="invalid-feedback" *ngIf="orderForm.get('lastName')?.errors?.['pattern']">
+        Поле может содержать только буквы!
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="phone" class="form-label">Телефон</label>
+    <input type="tel" id="phone" class="form-control" formControlName="phone">
+    <div class="w-100" *ngIf="orderForm.get('phone')?.invalid
+              && (orderForm.get('phone')?.touched || orderForm.get('phone')?.dirty)">
+      <div class="invalid-feedback" *ngIf="orderForm.get('phone')?.errors?.['required']">
+        Обязательно для заполнения!
+      </div>
+      <div class="invalid-feedback" *ngIf="orderForm.get('phone')?.errors?.['phone']
+              && !orderForm.get('phone')?.errors?.['required']  && orderForm.get('phone')?.touched">
+        Некорректный номер телефона!
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="country" class="form-label">Страна</label>
+    <input type="text" id="country" class="form-control" formControlName="country">
+    <div class="invalid-feedback" *ngIf="orderForm.get('country')?.invalid
+              && (orderForm.get('country')?.touched || orderForm.get('country')?.dirty)
+              && orderForm.get('country')?.errors?.['required']">
+      Обязательно для заполнения!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="index" class="form-label">Индекс</label>
+    <input type="number" id="index" class="form-control" formControlName="zip">
+    <div class="invalid-feedback" *ngIf="orderForm.get('zip')?.invalid
+              && (orderForm.get('zip')?.touched || orderForm.get('zip')?.dirty)
+              && orderForm.get('zip')?.errors?.['required']">
+      Обязательно для заполнения!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="address" class="form-label">Адрес</label>
+    <input type="text" id="address" class="form-control" formControlName="address">
+    <div class="w-100" *ngIf="orderForm.get('address')?.invalid
+              && (orderForm.get('address')?.touched || orderForm.get('address')?.dirty)">
+      <div class="invalid-feedback" *ngIf="orderForm.get('address')?.errors?.['required']">
+        Обязательно для заполнения!
+      </div>
+      <div class="invalid-feedback"
+           *ngIf="orderForm.get('address')?.errors?.['pattern']  && orderForm.get('address')?.touched">
+        Введите корректный адрес!
+      </div>
+    </div>
+  </div>
+  <div class="col-12 position-relative">
+    <label for="comment" class="form-label">Комментарий к заказу</label>
+    <input type="text" id="comment" class="form-control" formControlName="comment">
+  </div>
+  <div class="col-12 mt-4 d-flex align-items-center">
+    <button class="btn btn-primary px-5" [disabled]="orderForm.invalid || orderForm.disabled" (click)="createOrder()">Отправить</button>
+    <div class="text-danger ms-2" *ngIf="orderCreatedError">Произошла ошибка. Попробуйте еще раз.</div>
+  </div>
+</form>
+
+

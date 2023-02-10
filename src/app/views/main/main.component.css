@@ -1,0 +1,12 @@
+#accordion {
+  max-width: 856px;
+}
+
+.ui-state-default {
+  background: #007fff;
+  color: #fff;
+}
+
+.ui-accordion-header:hover {
+  background: #0b5ed7;
+}

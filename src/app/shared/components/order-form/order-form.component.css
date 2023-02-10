@@ -1,0 +1,12 @@
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.invalid-feedback {
+  display: block;
+  position: absolute;
+  top: 26px;
+  left: 15px;
+  font-size: 10px;
+}
